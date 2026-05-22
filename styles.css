@@ -33,6 +33,10 @@ body.dark-mode {
   color: #eef6ff;
 }
 
+.inside-table-header {
+  color: #000000;
+}
+
 body.dark-mode .inside-table-header {
   color: #ffffff;
 }
