@@ -115,10 +115,7 @@ svg {
   width: 96px;
   height: 96px;
   object-fit: contain;
-  border-radius: 20px;
-  background: var(--chip-bg);
-  border: 1px solid var(--border);
-  padding: 10px;
+  display: block;
 }
 
 .hero-panel {
