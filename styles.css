@@ -34,7 +34,7 @@ body.dark-mode {
 }
 
 .inside-table-header {
-  color: #000000;
+  color: black;
 }
 
 body.dark-mode .inside-table-header {
