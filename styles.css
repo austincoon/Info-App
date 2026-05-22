@@ -190,7 +190,7 @@ body.dark-mode .theme-icon::after {
 
 h1 {
   margin: 0;
-  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-size: 2rem;
   line-height: 1.05;
   color: var(--blue-900);
 }
