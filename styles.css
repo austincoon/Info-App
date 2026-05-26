@@ -1,71 +1,46 @@
 :root {
   color-scheme: light;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
   --blue-900: #0b2f6b;
   --blue-800: #174a94;
   --blue-700: #245ca8;
   --blue-200: #cfe2ff;
   --blue-100: #eaf3ff;
   --blue-050: #f6faff;
+
   --page-bg: #dbe8f7;
   --surface: #ffffff;
   --border: #bfd3ec;
+
   --chip-bg: #f6faff;
   --chip-border: #b8d2ef;
   --chip-text: #18385f;
+
   --text-muted: #52677f;
+
   color: #10233f;
   background: var(--page-bg);
 }
 
 body.dark-mode {
   color-scheme: dark;
+
   --page-bg: #081525;
   --surface: #101d2f;
+
   --chip-bg: #172b45;
   --chip-border: #2e5a89;
   --chip-text: #d9ecff;
+
   --border: #28476b;
   --text-muted: #a9bdd5;
+
   --blue-900: #d8ecff;
   --blue-800: #a9d2ff;
   --blue-700: #77b8ff;
+
   color: #eef6ff;
-}
-
-.info-table td.inside-table-header {
-  color: #000000;
-}
-
-body.dark-mode .inside-table-header {
-  color: #ffffff;
-}
-
-.header-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 12px;
-}
-
-.tref-button {
-  text-decoration: none !important;
-  padding: 0 14px;
-  min-height: 44px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--chip-bg);
-  color: var(--blue-800);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font: inherit;
-  font-size: 0.95rem;
-  font-weight: 800;
-}
-
-.tref-button:hover {
-  border-color: var(--blue-700);
 }
 
 * {
@@ -90,12 +65,32 @@ svg {
   max-width: 100%;
 }
 
+/* =========================================
+   TABLE HEADER COLORS
+========================================= */
+
+.info-table td.inside-table-header {
+  color: #000000;
+}
+
+body.dark-mode .inside-table-header {
+  color: #ffffff;
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
 .container {
   width: min(1200px, 100%);
   margin: 0 auto;
   padding: 24px 26px 32px;
   background: var(--surface);
 }
+
+/* =========================================
+   HEADER
+========================================= */
 
 .site-header {
   display: grid;
@@ -126,26 +121,85 @@ svg {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  gap: 12px;
 }
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.tref-button {
+  text-decoration: none !important;
+  padding: 0 14px;
+  min-height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--chip-bg);
+  color: var(--blue-800);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 800;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.tref-button:hover {
+  border-color: var(--blue-700);
+  background: rgba(20, 92, 168, 0.08);
+  transform: translateY(-1px);
+}
+
+body.dark-mode .tref-button:hover {
+  border-color: #77b8ff;
+  background: rgba(119, 184, 255, 0.12);
+}
+
+/* =========================================
+   THEME TOGGLE
+========================================= */
 
 .theme-toggle {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+
   min-height: 44px;
   padding: 0 14px;
+
   border: 1px solid var(--border);
   border-radius: 999px;
+
   background: var(--chip-bg);
   color: var(--blue-800);
+
   cursor: pointer;
+
   font: inherit;
   font-size: 0.95rem;
   font-weight: 800;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
 }
 
 .theme-toggle:hover {
   border-color: var(--blue-700);
+  background: rgba(20, 92, 168, 0.08);
+  transform: translateY(-1px);
+}
+
+body.dark-mode .theme-toggle:hover {
+  border-color: #77b8ff;
+  background: rgba(119, 184, 255, 0.12);
 }
 
 .theme-icon {
@@ -162,12 +216,18 @@ svg {
   position: absolute;
   top: 3px;
   left: 4px;
+
   width: 12px;
   height: 12px;
+
   border-radius: 50%;
   background: var(--surface);
+
   box-shadow: 0 1px 2px rgba(11, 47, 107, 0.24);
-  transition: transform 160ms ease, background 160ms ease;
+
+  transition:
+    transform 160ms ease,
+    background 160ms ease;
 }
 
 body.dark-mode .theme-icon {
@@ -179,9 +239,15 @@ body.dark-mode .theme-icon::after {
   background: #eaf3ff;
 }
 
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
 .eyebrow {
   margin: 0 0 10px;
+
   color: var(--blue-700);
+
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.05em;
@@ -190,8 +256,10 @@ body.dark-mode .theme-icon::after {
 
 h1 {
   margin: 0;
+
   font-size: 2rem;
   line-height: 1.05;
+
   color: var(--blue-900);
 }
 
@@ -201,14 +269,21 @@ p {
   line-height: 1.75;
 }
 
+/* =========================================
+   SEARCH PANEL
+========================================= */
+
 .search-panel {
   display: grid;
   grid-template-columns: 1fr;
   gap: 12px;
+
   margin: 24px 0;
   padding: 18px 20px;
+
   border: 1px solid var(--border);
   border-radius: 22px;
+
   background: var(--chip-bg);
 }
 
@@ -219,6 +294,7 @@ p {
 .search-group label {
   display: block;
   margin-bottom: 8px;
+
   color: var(--blue-700);
   font-weight: 700;
 }
@@ -226,11 +302,15 @@ p {
 .search-group input {
   width: 100%;
   min-height: 46px;
+
   padding: 12px 14px;
+
   border: 1px solid var(--border);
   border-radius: 14px;
+
   background: var(--surface);
   color: inherit;
+
   font: inherit;
 }
 
@@ -239,26 +319,40 @@ p {
   outline-offset: 2px;
 }
 
+/* =========================================
+   PAGE NAV
+========================================= */
 
 .page-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+
   margin-bottom: 18px;
 }
 
 .page-nav a {
   display: inline-flex;
   align-items: center;
+
   padding: 10px 14px;
+
   border-radius: 999px;
   border: 1px solid var(--border);
+
   background: var(--chip-bg);
   color: var(--blue-900);
+
   text-decoration: none;
+
   font-size: 0.88rem;
   font-weight: 700;
-  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease, color 180ms ease;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    color 180ms ease;
 }
 
 .page-nav a:hover,
@@ -275,6 +369,25 @@ p {
   color: var(--blue-900);
 }
 
+/* DARK MODE NAV HOVERS */
+
+body.dark-mode .page-nav a:hover,
+body.dark-mode .page-nav a:focus-visible {
+  border-color: #77b8ff;
+  background: rgba(119, 184, 255, 0.18);
+  color: #d8ecff;
+}
+
+body.dark-mode .page-nav a.active {
+  border-color: #77b8ff;
+  background: rgba(119, 184, 255, 0.24);
+  color: #ffffff;
+}
+
+/* =========================================
+   SECTIONS
+========================================= */
+
 .page-sections {
   display: grid;
   gap: 18px;
@@ -282,9 +395,12 @@ p {
 
 .info-section {
   padding: 24px;
+
   border: 1px solid var(--border);
   border-radius: 24px;
+
   background: var(--surface);
+
   box-shadow: 0 18px 60px rgba(11, 47, 107, 0.05);
 }
 
@@ -308,18 +424,30 @@ p {
   gap: 16px;
 }
 
+/* =========================================
+   INFO CARDS
+========================================= */
+
 .info-card {
   padding: 18px 20px;
+
   border: 1px solid var(--border);
   border-radius: 20px;
+
   background: var(--chip-bg);
 }
 
 .info-card h3 {
   margin: 0 0 10px;
+
   color: var(--blue-900);
+
   font-size: 1.05rem;
 }
+
+/* =========================================
+   LISTS
+========================================= */
 
 .info-list {
   margin: 0;
@@ -336,6 +464,10 @@ p {
   margin-bottom: 0.75rem;
 }
 
+/* =========================================
+   TABLES
+========================================= */
+
 .table-wrapper {
   overflow-x: auto;
 }
@@ -350,7 +482,9 @@ p {
 .info-table td {
   text-align: left;
   padding: 12px 14px;
+
   border: 1px solid var(--border);
+
   color: var(--text-muted);
 }
 
@@ -361,12 +495,21 @@ p {
 }
 
 .info-table tbody tr:hover {
-  background: var(--blue-100, #eaf3ff);
+  background: rgba(20, 92, 168, 0.08);
   transition: background 0.18s;
 }
 
+body.dark-mode .info-table tbody tr:hover {
+  background: rgba(119, 184, 255, 0.12);
+}
+
+/* =========================================
+   NOTES / NOTICE
+========================================= */
+
 .info-note {
   margin-top: 14px;
+
   color: var(--blue-900);
   font-weight: 700;
 }
@@ -374,6 +517,7 @@ p {
 .small-text {
   display: block;
   margin-top: 0.25rem;
+
   font-size: 0.86rem;
   color: var(--text-muted);
 }
@@ -381,11 +525,17 @@ p {
 .notice {
   margin-top: 18px;
   padding: 16px;
+
   border: 1px solid var(--border);
   border-radius: 18px;
+
   background: var(--chip-bg);
   color: var(--blue-900);
 }
+
+/* =========================================
+   RESPONSIVE
+========================================= */
 
 @media (max-width: 960px) {
   .site-header {
@@ -430,7 +580,8 @@ p {
   }
 
   .info-list.columns {
-    column-count: 1
+    column-count: 1;
+  }
 
   .search-panel {
     grid-template-columns: 1fr;
@@ -438,34 +589,5 @@ p {
 
   .quick-links {
     justify-content: flex-start;
-  }
-}
-
-@media (max-width: 760px) {
-  .container {
-    padding: 18px 16px 24px;
-  }
-
-  .theme-toggle {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .brand-logo {
-    width: 80px;
-    min-height: 80px;
-  }
-
-  .search-group input {
-    min-height: 42px;
-  }
-
-  .page-nav a,
-  .quick-links span {
-    width: 100%;
-  }
-
-  .info-list.columns {
-    column-count: 1;
   }
 }
