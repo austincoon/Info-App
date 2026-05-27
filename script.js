@@ -81,3 +81,26 @@ searchInput.addEventListener('input', (event) => {
 });
 
 filterInfo('');
+
+
+function updateAdultDate() {
+  const today = new Date();
+
+  // Subtract 18 years
+  const adultDate = new Date(
+    today.getFullYear() - 18,
+    today.getMonth(),
+    today.getDate()
+  );
+
+  // Format date nicely
+  const formattedDate = adultDate.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+
+  document.getElementById("adultDate").textContent = formattedDate;
+}
+
+updateAdultDate();
